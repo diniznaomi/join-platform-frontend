@@ -1,0 +1,24 @@
+.img {
+    width: 155px;
+    height: 155px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    margin-top: 12px;
+}
+
+.star {
+    color: #fbe639;
+    margin-left: 3px;
+}
+
+.profile-content {
+     width: 18rem;
+     padding: 16px;
+}
+
+.heart-icon {
+    color: #fc5185;
+    cursor: pointer; 
+    font-size: 1.2rem;
+}
+

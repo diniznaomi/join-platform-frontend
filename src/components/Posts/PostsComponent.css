@@ -1,0 +1,63 @@
+.card-img {
+    width: 30px;
+    height: 30px;
+    margin-top: 16px;
+    margin-left: 15px;
+    border-radius: 50%; 
+}
+
+.gratification-img {
+    width: 20px;
+    height: auto;
+    margin-left: 10px;
+    margin-bottom: 12px;
+}
+
+.title {
+    font-weight: bold; 
+    font-size: 2rem; 
+    color: #ffff;
+}
+
+@media (min-width: 1012px) { 
+    .wrapper-posts .card {
+        width: 850px;
+    }
+}
+
+.wrapper-posts {
+    display: flex;
+    flex-direction: column; 
+}
+
+.card {
+    position: relative; 
+}
+
+.timing {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.post-content {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.post-title{
+    display: inline-block;
+}
+
+.like-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: auto;
+}
+
+.star-post {
+    color: #fbe639;
+    margin-left: 6px;
+    margin-bottom: 3px;
+}

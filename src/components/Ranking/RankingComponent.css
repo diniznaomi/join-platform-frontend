@@ -1,0 +1,16 @@
+.ranking {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .ranking-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .ranking-list li {
+    margin: 5px 0;
+  }

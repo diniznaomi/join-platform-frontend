@@ -1,0 +1,36 @@
+.space {
+    width: 100%;
+    background-color: #ffff;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.calendar {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.select-office {
+    position: relative; 
+    margin-top: 10px;
+}
+
+.form-control {
+    padding-right: 30px; 
+}
+
+.form-control:focus {
+    outline: none; 
+}
+
+.select-office::after {
+    content: '\25BC';
+    position: absolute;
+    top: 50%;
+    right: 10px; 
+    transform: translateY(-50%); 
+    font-size: 12px;
+    color: #666; 
+    pointer-events: none; 
+}
