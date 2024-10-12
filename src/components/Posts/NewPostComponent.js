@@ -17,7 +17,7 @@ const NewPostComponent = ({ onAddPost }) => {
 
   return (
     <div className="new-post">
-      <h5>Appreciate someone's work by sending a recognition message</h5>
+      <h5>Appreciate someone by sending a recognition message</h5>
       <Form className="form" onSubmit={handleSubmit}>
         <Form.Group controlId="formTitle" className="name">
           <Form.Control
@@ -36,8 +36,8 @@ const NewPostComponent = ({ onAddPost }) => {
             onChange={(e) => setContent(e.target.value)}
           />
         </Form.Group>
-        <div className="text-end btn-content">
-          <Button variant="primary" type="submit" className="btn-send">
+        <div className="text-end btn-content-new-post">
+          <Button type="submit" className="btn-send-new-post">
             Send
           </Button>
         </div>

@@ -1,0 +1,49 @@
+/* Mudar a cor de fundo do calendário */
+.react-datepicker {
+    background-color: #f0f8ff;
+    border: 1px solid #d6d6d6;
+    border-radius: 8px;
+}
+
+/* Mudar a cor de fundo dos dias */
+.react-datepicker__day {
+    color: #333; 
+}
+
+/* Mudar a cor do dia selecionado */
+.react-datepicker__day--selected, 
+.react-datepicker__day--keyboard-selected {
+    background-color: #4caf50; 
+    color: white; 
+}
+
+/* Mudar a cor ao passar o mouse sobre um dia */
+.react-datepicker__day:hover {
+    background-color: #a5d6a7 !important; 
+}
+
+.react-datepicker__day--disabled:hover {
+    background-color: #f0f8ff !important;
+    border-radius: 8px;
+}
+
+.react-datepicker__day--disabled {
+    color: #a3a3a3;
+}
+
+.react-datepicker__header  {
+    background-color: #004caa;
+}
+
+.react-datepicker__day-name {
+    color: #ffff;
+}
+
+/* Mudar a cor da barra superior com o mês e ano */
+.react-datepicker__current-month {
+    color: white; 
+    padding: 8px;
+    font-size: 16px;
+}
+
+

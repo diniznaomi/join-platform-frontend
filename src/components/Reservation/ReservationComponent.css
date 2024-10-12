@@ -9,6 +9,7 @@
     display: flex;
     justify-content: center; 
     align-items: center;
+    margin-top: 16px;
 }
 
 .select-office {
@@ -34,3 +35,27 @@
     color: #666; 
     pointer-events: none; 
 }
+
+.btn-content-reserve .btn-send-reserve {
+    background-color: #4caf50;
+    min-width: 100px;
+    height: 35px;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-content-reserve .btn-send-reserve:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.btn-content-reserve {
+    margin-top: 15px;
+}
+
+/* Botão de envio - estado loading */
+.btn-send-reserve:disabled {
+    background-color: rgb(57, 187, 94); 
+    cursor: not-allowed; 
+  }

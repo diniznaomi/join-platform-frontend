@@ -6,13 +6,6 @@
     border-radius: 50%; 
 }
 
-.gratification-img {
-    width: 20px;
-    height: auto;
-    margin-left: 10px;
-    margin-bottom: 12px;
-}
-
 .title {
     font-weight: bold; 
     font-size: 2rem; 
@@ -60,4 +53,18 @@
     color: #fbe639;
     margin-left: 6px;
     margin-bottom: 3px;
+}
+
+.heart-icon {
+    color: #fc5185;
+    cursor: pointer; 
+    font-size: 1.2rem;
+}
+
+.gratification-img-post {
+    width: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: auto;
 }

@@ -1,11 +1,10 @@
 .new-post {
-    background-color: #ffff;
     padding: 15px;
     border-radius: 5px;
-    border: 1px solid #ddd;
-    width: 100%;
-    height: 311px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5 );
+    background-color: rgba(255, 255, 255, 0); 
+    border: none;
+    color: #ffff;
+    box-shadow: none;
 }
 
 .name {
@@ -16,13 +15,21 @@
     margin-top: 15px;
 }
 
-.btn-send {
-    background-color: #004caa;
-    width: 100px;
+.btn-send-new-post {
+    background-color: #ffffff;
+    border: 1px solid #004caa;
+    color: rgb(75, 73, 73);
+    min-width: 100px;
     height: 35px;
 }
 
-.btn-content {
+.btn-content-new-post {
     margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+    .new-post {
+        border: 2px solid #316cb4
+    }
 }
 

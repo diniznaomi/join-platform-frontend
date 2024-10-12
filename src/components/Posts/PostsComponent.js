@@ -26,10 +26,14 @@ const PostsComponent = ({ posts }) => {
             <Card.Body className="post-content">
               <div>
                 <Card.Title className="post-title">
-                    {post.title}
-                    <FaStar className="me-1 star-post" /> 
-                    </Card.Title>
-                
+                  {post.title}
+                  <img 
+                    variant="top" 
+                    src={require("../../assets/shape/award-48.png")}
+                    alt="gratification" 
+                    className="gratification-img-post"
+                  />
+                </Card.Title>               
                 <Card.Text>{post.content}</Card.Text>
                 <Card.Text className="timing">
                   <small className="text-muted">{post.updated}</small>
