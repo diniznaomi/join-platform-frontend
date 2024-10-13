@@ -7,7 +7,7 @@ function ProfileComponent() {
   const [userData, setUserData] = useState({name: 'Naomi Moura', role: 'Product Manager'});
   const receivedCount = 10; 
   const sentCount = 5;
-  const userId = 5;
+  const userId = 3;
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -63,7 +63,7 @@ function ProfileComponent() {
         </Card.Body>
       </Card>
       <div>
-       <hr class="divider"/>
+       <hr className="divider"/>
       </div>
     </div>
     

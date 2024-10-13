@@ -4,7 +4,7 @@ const API_URL = 'http://localhost:8000';
 
 const UserService = {
   async getUser(userId) {
-    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjOGI0MjRkY2MwYTU5MzE4NDdmNmQ0ZGQ5NDJiOGU0Mzo5NyIsImlhdCI6MTcyODc0NTI0NywiZXhwIjoxNzI4NzQ4ODQ3fQ.7YFRTaHj67jdSDFhaK7cw9HOnzdjX0aV_hwqLvXnFCo"
+    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyYThjMTY0NDEzOGI2NzU5YTc4NzVjMjI5NTk1MWU0MDpiZCIsImlhdCI6MTcyODc3NDMzNywiZXhwIjoxNzI4Nzc3OTM3fQ.CLJhpVyrlLmYLPBpDntjXZFvnHOPUjKwgaiU_FYabiU"
     try {
       const response = await axios.get(`${API_URL}/user/${userId}`, {
         headers: {
