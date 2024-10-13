@@ -4,7 +4,7 @@ const API_URL = 'http://localhost:8000';
 
 const PostService = {
   async getPosts(companyId) {
-    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxYzhlNTM2OTBkYzhhODMzOTkyNGMzYmIyMjM1MGQ1MTowNyIsImlhdCI6MTcyODc4ODQ2NiwiZXhwIjoxNzI4NzkyMDY2fQ.UWCooZuSAZKfQymSy2PGIp7ZVeimGFirqRsNIpfI7Q0"
+    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDFhNjljYTA5Njk5OTJhMWVhZjQyYTRlZjBiNWY1OTpjOSIsImlhdCI6MTcyODgzMjA5NywiZXhwIjoxNzI4ODM1Njk3fQ.s1Oi7hx-_nVmZLXagrlj2a_UUyCiMzijk-Mj35ElsxI"
     try {
       const response = await axios.get(`${API_URL}/post/${companyId}`, {
         headers: {
