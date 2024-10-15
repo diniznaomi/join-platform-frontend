@@ -5,9 +5,7 @@ import UserService from '../../Services/UserService';
 
 function ProfileComponent() {
   const [userData, setUserData] = useState({name: 'Naomi Moura', role: 'Product Manager'});
-  const receivedCount = 10; 
-  const sentCount = 5;
-  const userId = 3;
+  const userId = 12;
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -46,7 +44,7 @@ function ProfileComponent() {
                 alt="gratification" 
                 className="gratification-img"
             />
-              <h6 className="recognition-counter">{receivedCount} received</h6>
+              <h6 className="recognition-counter">{userData.postsReceived} received</h6>
             </div>
             <div className="d-flex align-items-center">
               <img 
@@ -55,7 +53,7 @@ function ProfileComponent() {
                     alt="gratification" 
                     className="gratification-img"
                 />
-              <h6 className="recognition-counter">{sentCount} sent</h6>
+              <h6 className="recognition-counter">{userData.postsCreated} sent</h6>
               <span>
             </span>
             </div>

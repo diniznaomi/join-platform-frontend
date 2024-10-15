@@ -4,15 +4,15 @@ import { FaHeart } from 'react-icons/fa';
 import './PostsComponent.css';
 import PostService from '../../Services/PostService';
 
-const PostsComponent = ({posts}) => {
-  const [likes, setLikes] = useState(posts.map(post => post.likes));
+const PostsComponent = () => {
   const [postsList, setPostsList] = useState(null);
   const companyId = "3";
 
-  const handleLike = (index) => {
-    const newLikes = [...likes]; 
-    newLikes[index] += 1; 
-    setLikes(newLikes); 
+  const handleLike = async (index) => {
+      const newPosts = [...postsList] 
+      newPosts[index].likeCount += 1;
+      setPostsList(newPosts);
+      await PostService.likePost(newPosts[index].id);
   };
 
   useEffect(() => {
@@ -42,7 +42,7 @@ const PostsComponent = ({posts}) => {
             <Card.Body className="post-content">
               <div>
                 <Card.Title className="post-title">
-                  {post.recipient.name} received a recognition
+                  {post?.recipient?.name} received a recognition
                   <img 
                     variant="top" 
                     src={require("../../assets/shape/award-48.png")}
@@ -50,16 +50,16 @@ const PostsComponent = ({posts}) => {
                     className="gratification-img-post"
                   />
                 </Card.Title>               
-                <Card.Text>{post.message}</Card.Text>
+                <Card.Text>{post?.message}</Card.Text>
                 <Card.Text className="timing">
-                  <small className="text-muted">from: {post.author.name}</small>
+                  <small className="text-muted">from: {post?.author?.name}</small>
                 </Card.Text>
               </div>
               <span 
                 className="like-button" 
                 onClick={() => handleLike(index)} 
                 style={{ cursor: 'pointer' }}>
-                {likes[index]}
+                {post.likeCount}
                 <FaHeart className="heart-icon" />
               </span>
             </Card.Body>

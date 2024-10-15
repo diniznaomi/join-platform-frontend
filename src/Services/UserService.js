@@ -1,10 +1,11 @@
 import axios from 'axios';
 
 const API_URL = 'http://localhost:8000';
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4NDdjMzdiYTJlMTA2ZWViNzViODJlYTBmMjE3ZWEwYzpkNCIsImlhdCI6MTcyODk1NjU2NSwiZXhwIjoxNzI4OTYwMTY1fQ.T7mu8BJaxJy0gqt0yO9Brsx7VjFep7iRsrDda_bwBFo"
 
-const UserService = {
+class UserService {
+
   async getUser(userId) {
-    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDFhNjljYTA5Njk5OTJhMWVhZjQyYTRlZjBiNWY1OTpjOSIsImlhdCI6MTcyODgzMjA5NywiZXhwIjoxNzI4ODM1Njk3fQ.s1Oi7hx-_nVmZLXagrlj2a_UUyCiMzijk-Mj35ElsxI"
     try {
       const response = await axios.get(`${API_URL}/user/${userId}`, {
         headers: {
@@ -16,7 +17,7 @@ const UserService = {
       console.error('Error fetching user data:', error);
       throw error;
     }
-  },
-};
+  }
+}
 
-export default UserService;
+export default new UserService(); 
