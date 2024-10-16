@@ -5,19 +5,15 @@ import UserService from '../../Services/UserService';
 import { useSelector } from 'react-redux';
 
 function ProfileComponent() {
-  const [userData, setUserData] = useState({name: 'Naomi Moura', role: 'Product Manager'});
+  const [userData, setUserData] = useState();
   const user = useSelector((state) => state.user.user);
   
-  const userId = user.id;
+  const userId = user?.id;
 
   useEffect(() => {
     const fetchUserData = async () => {
-      try {
-        const data = await UserService.getUser(userId);
-        setUserData(data.user);
-      } catch (error) {
-        throw new Error('Failed to fetch user data');
-      }
+      const data = await UserService.getUser(userId);
+      setUserData(data.user);
     };
 
     fetchUserData();
@@ -35,9 +31,9 @@ function ProfileComponent() {
           />
         </div>
         <Card.Body>
-          <Card.Title>{userData.name}</Card.Title>
+          <Card.Title>{userData?.name}</Card.Title>
           <Card.Text>
-          {userData.role}
+          {userData?.role}
           </Card.Text>
           <div className="d-flex justify-content-between recognition-content">
             <div className="d-flex align-items-center">
@@ -47,7 +43,7 @@ function ProfileComponent() {
                 alt="gratification" 
                 className="gratification-img"
             />
-              <h6 className="recognition-counter">{userData.postsReceived} received</h6>
+              <h6 className="recognition-counter">{userData?.postsReceived} received</h6>
             </div>
             <div className="d-flex align-items-center">
               <img 
@@ -56,7 +52,7 @@ function ProfileComponent() {
                     alt="gratification" 
                     className="gratification-img"
                 />
-              <h6 className="recognition-counter">{userData.postsCreated} sent</h6>
+              <h6 className="recognition-counter">{userData?.postsCreated} sent</h6>
               <span>
             </span>
             </div>

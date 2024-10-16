@@ -13,9 +13,7 @@ class UserService {
       });
       return response.data;
     } catch (error) {
-      console.error('Error fetching user data:', error);
       this.handleAuthError(error);
-      throw error;
     }
   }
 
@@ -34,9 +32,11 @@ class UserService {
 
   handleAuthError(error) {
     if (error.response && error.response.status === 401) {
+      window.location.href = '/login'; 
       localStorage.removeItem('authToken');
-      window.location.href = '/login';  
-      console.error('Unauthorized! Token removed and user redirected to login.');
+    } else {
+      console.error('Error users data:', error.response ? error.response.data : error.message);
+      throw error;
     }
   }
 }

@@ -10,24 +10,23 @@ const NewPostComponent = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+    setLoading(true);
+
     const post = {
       message: content,
       to_user_email: to
     };
 
-    setLoading(true);
     await createPost(post); 
-    setLoading(false);
     setTo('');
     setContent('');
-
     setLoading(false);
+    window.location.reload()
   };
 
   const createPost = async (post) => {
     try {
-      return await PostService.createPost(post);
+      await PostService.createPost(post);
     } catch (error) {
       console.error('Error creating post:', error);
       throw error;

@@ -3,10 +3,12 @@ import { Card } from 'react-bootstrap';
 import { FaHeart } from 'react-icons/fa'; 
 import './PostsComponent.css';
 import PostService from '../../Services/PostService';
+import { useSelector } from 'react-redux';
 
 const PostsComponent = () => {
   const [postsList, setPostsList] = useState(null);
-  const companyId = "3";
+  const user = useSelector((state) => state.user.user);
+  const companyId = user?.company_id;
 
   const handleLike = async (index) => {
       const newPosts = [...postsList] 
@@ -17,12 +19,8 @@ const PostsComponent = () => {
 
   useEffect(() => {
     const fetchUserData = async () => {
-      try {
-        const data = await PostService.getPosts(companyId)
-        setPostsList(data.posts);
-      } catch (error) {
-        throw new Error('Failed to fetch posts data');
-      }
+      const data = await PostService.getPosts(companyId)
+      setPostsList(data.posts);
     };
 
     fetchUserData();
@@ -59,7 +57,7 @@ const PostsComponent = () => {
                 className="like-button" 
                 onClick={() => handleLike(index)} 
                 style={{ cursor: 'pointer' }}>
-                {post.likeCount}
+                {post?.likeCount}
                 <FaHeart className="heart-icon" />
               </span>
             </Card.Body>
