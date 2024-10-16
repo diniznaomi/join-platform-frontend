@@ -1,17 +1,36 @@
 import React, { useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Form, Spinner } from 'react-bootstrap';
 import './NewPostComponent.css';
+import PostService from '../../Services/PostService';
 
-const NewPostComponent = ({ onAddPost }) => {
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
+const NewPostComponent = () => {
+  const [to, setTo] = useState('');  
+  const [content, setContent] = useState('');  
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (title && content) {
-      onAddPost({ title, content, updated: 'just now', likes: 0 });
-      setTitle('');
-      setContent('');
+    
+    const post = {
+      message: content,
+      to_user_email: to
+    };
+
+    setLoading(true);
+    await createPost(post); 
+    setLoading(false);
+    setTo('');
+    setContent('');
+
+    setLoading(false);
+  };
+
+  const createPost = async (post) => {
+    try {
+      return await PostService.createPost(post);
+    } catch (error) {
+      console.error('Error creating post:', error);
+      throw error;
     }
   };
 
@@ -22,9 +41,10 @@ const NewPostComponent = ({ onAddPost }) => {
         <Form.Group controlId="formTitle" className="name">
           <Form.Control
             type="text"
-            placeholder="to"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            placeholder="to" 
+            value={to}
+            onChange={(e) => setTo(e.target.value)}
+            required
           />
         </Form.Group>
         <Form.Group controlId="formContent" className="message-box">
@@ -34,11 +54,20 @@ const NewPostComponent = ({ onAddPost }) => {
             placeholder="Message..."
             value={content}
             onChange={(e) => setContent(e.target.value)}
+            required
           />
         </Form.Group>
         <div className="text-end btn-content-new-post">
-          <Button type="submit" className="btn-send-new-post">
-            Send
+          <Button type="submit" className="btn-send-new-post" disabled={loading}>
+            {loading ? (
+              <Spinner
+                as="span"
+                animation="border"
+                size="sm"
+                role="status"
+                aria-hidden="true"
+              />
+            ) : 'Send'}
           </Button>
         </div>
       </Form>

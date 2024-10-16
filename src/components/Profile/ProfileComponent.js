@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import './ProfileComponent.css';
 import UserService from '../../Services/UserService';
+import { useSelector } from 'react-redux';
 
 function ProfileComponent() {
   const [userData, setUserData] = useState({name: 'Naomi Moura', role: 'Product Manager'});
-  const userId = 12;
+  const user = useSelector((state) => state.user.user);
+  
+  const userId = user.id;
 
   useEffect(() => {
     const fetchUserData = async () => {

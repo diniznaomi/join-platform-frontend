@@ -1,0 +1,209 @@
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column; /* Alinha as divs verticalmente */
+    }
+
+    .login-image {
+        flex: none;
+        height: 300px;
+    }
+
+    .login-form {
+        flex: none;
+        padding: 10px;
+    }
+
+    .shapeLogin9{
+        right: 07% !important;
+        top: 20% !important;
+    }
+
+    .shapeLogin4{
+        right: 07% !important;
+        top: 20% !important;
+    }
+
+    .shapeLogin10 {
+        right: 10% !important;
+        top: 30% !important;
+    }
+
+    .shapeLogin7 {
+        left: 80% !important;
+        top: 5%;
+    }
+
+    .shapeLogin.shapeLogin5{
+        right: 5% !important;
+        top: 6% !important;
+    }
+
+    .shapeLogin6{
+        left: 90% !important;
+        top: 40%;
+        width: 10px;
+    }
+
+    .shapeLogin8{
+        left: 30% !important;
+        top: 5%  !important;
+        width: 10px;
+    }
+
+    .shapeLogin13{
+        left: 60% !important;
+        top: 2%  !important;
+        width: 5px !important;
+    }
+}
+
+.login-container {
+    display: flex;
+    height: 100vh; 
+}
+
+.login-form {
+    flex: 1; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    padding: 20px;
+    background-color: #f8f9fa; 
+}
+
+.login-form form {
+    width: 80%; 
+    max-width: 400px; 
+}
+
+.login-form input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #004caa;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.login-form button:disabled {
+    background-color: #6c757d;
+}
+
+.logo-login {
+    width: 250px;
+    height: 250px;
+    display: block;
+    margin: 15px auto; 
+}
+
+.verifed-img{
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+}
+
+.login-caption {
+    margin-bottom: auto; 
+    text-align: center; 
+    color: white; 
+}
+
+.login-image {
+    flex: 1.5; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    background-size: cover; 
+    background-position: center;
+    background-color: #004caa;
+}
+
+.shapeLogin {
+    position: absolute;
+}
+
+.shapeLogin.shapeLogin2 {
+    left: 25%;
+    top: 25%;
+}
+
+.shapeLogin.shapeLogin11 {
+    left: 15%;
+    top: 35%;
+    width: 5px;
+}
+
+.shapeLogin.shapeLogin3 {
+    animation: moveUpAndDown 5s ease-in-out infinite; 
+    top: 40%;
+    left: 50%; 
+    width: 8px;
+}
+
+.shapeLogin.shapeLogin10 {
+    animation: moveUpAndDown2 3s ease-in-out infinite; 
+    width: 5px;
+}
+
+.shapeLogin.shapeLogin5 {
+    left: 10%;
+    top: 60%;
+}
+
+.shapeLogin.shapeLogin4{
+    left: 10%;
+    top: 10%;
+}
+
+.shapeLogin.shapeLogin6 {
+    left: 5%;
+    bottom: 20%;
+}
+
+.shapeLogin.shapeLogin7 {
+    left: 30%;
+    bottom: 15%;
+}
+
+.shapeLogin.shapeLogin8 {
+    right:57%;
+    top: 15%;
+}
+
+.shapeLogin.shapeLogin9 {
+    right: 50%;
+    top: 70%;
+}
+
+.shapeLogin.shapeLogin10 {
+    right: 55%;
+    bottom: 15%;
+}
+
+.shapeLogin.shapeLogin3 {
+    left: 10%;
+    top: 29%;
+}
+
+.shapeLogin.shapeLogin13 {
+    right: 50%;
+    top: 40%;
+    width: 13px;
+}
+
+.shapeLogin.shapeLogin6 {
+    animation: rotateShape 10s linear infinite; 
+}
+
+.shapeLogin.shapeLogin8 {
+    animation: rotateShape 2s linear infinite; 
+}
